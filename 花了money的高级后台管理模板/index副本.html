@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="../css/productInfo.css"/>
+
+</head>
+<body>
+    <div class="nano">
+        <!--头部信息开始-->
+        <div class="location_header">
+            <div class= "location">
+                <img src="../img/house.png" width="16" height="13" />
+                当前位置：
+                <a class="bule" href="firstdiagnose.html">初诊病历详情</a>
+
+
+                <span class="bule back" onclick="window.history.back(-1)"><span class="glyphicon glyphicon-arrow-left"></span>返回</span>
+            </div>
+            <div class="patientInfo">
+                <!--个人信息开始-->
+                <ul class="clearfix row">
+                    <li style="margin-left: 0" class="col-md-3 col-sm-3"><label>女方姓名：</label><span></span></li>
+                    <li class="col-md-3 col-sm-3"><label>女方年龄：</label><span></span></li>
+                    <li class="col-md-3 col-sm-3"><label>男方姓名：</label><span></span></li>
+                    <li class="col-md-3 col-sm-3"><label>男方年龄：</label><span></span></li>
+                </ul>
+                <!--个人信息结束-->
+            </div>
+        </div>
+        <!--头部信息结束-->
+
+
+        <div class="nano-content pt70">
+
+        <div class= "maininfo">
+
+            <!-- 病历tab开始 -->
+            <div class="pagecontent">
+
+                <ul id="firstDiaTab" class="nav nav-tabs">
+
+                    <li class="active">
+                        <a href="#female" data-toggle="tab">女方病历</a>
+                    </li>
+
+                    <li>
+                        <a href="#male" data-toggle="tab">男方病历</a>
+                    </li>
+                    <li>
+                        <a href="#fileinfo" data-toggle="tab">病历附件</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 病历tab结束 -->
+
+
+            <!-- 每个tab页对应的内容 -->
+            <div id="firstDiaPanel" class="tab-content">
+                <!--女方病历开始-->
+                <div class="tab-pane fade in active" id="female">
+                    <div class="female clearfix">
+
+                        <form class="form-inline">
+                            <h3 class="firstDiaTitle">现病史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="txtpourout">主诉：</label>
+                                    <input type="text" class="form-control infotext data-verify long_ipt" id="txtpourout" placeholder="请输入内容" datafiled="pourout">
+                                    <!--<input class="col-md-9" type="text" class="infotext data-verify" id="txtpourout" datafiled="pourout"/>-->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtnowmedicalrecord">现病史：</label>
+                                    <textarea class="form-control infotextarea1 data-verify long_ipt" id="txtnowmedicalrecord" datafiled="nowmedicalrecord" placeholder="请输入内容"  style="width: 650px;padding:6px 12px"></textarea>
+
+                                </div>
+
+                                <!--<button type="submit" class="btn btn-default">Send invitation</button>-->
+                            </div>
+
+                            <h3 class="firstDiaTitle">既往史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="slana_hepatitis">肝炎：</label>
+                                    <select class="form-control select2" id="slana_hepatitis" datafiled="ana_hepatitis"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_hepatitis_detail" datafiled="ana_hepatitis_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_ops">手术史：</label>
+                                    <select class="form-control select2" id="slana_ops" datafiled="ana_ops"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_ops_detail" datafiled="ana_ops_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_tb">结核：</label>
+                                    <select class="form-control select2" id="slana_tb" datafiled="ana_tb"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_tb_detail" datafiled="ana_tb_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_uropoiesis">泌尿系统疾病：</label>
+                                    <select class="form-control select2" id="slana_uropoiesis" datafiled="ana_uropoiesis"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_uropoiesis_detail" datafiled="ana_uropoiesis_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_cardiovascular">心血管疾病：</label>
+                                    <select class="form-control select2" id="slana_cardiovascular" datafiled="ana_cardiovascular"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_cardiovascular_detail" datafiled="ana_cardiovascular_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="slana_pid">盆腔炎：</label>
+                                    <select class="form-control select2" id="slana_pid" datafiled="ana_pid"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_pid_detail" datafiled="ana_pid_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_std">性传播疾病：</label>
+                                    <select class="form-control select2" id="slana_std" datafiled="ana_std"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_std_detail" datafiled="ana_std_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_nephritis">肾脏疾病：</label>
+                                    <select class="form-control select2" id="slana_nephritis" datafiled="ana_nephritis"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_nephritis_detail" datafiled="ana_anamnesis_memo"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_nephritis">其他：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtana_anamnesis_memo" datafiled="ana_anamnesis_memo"  placeholder="请输入内容"/></li>
+                                </div>
+
+                            </div>
+
+                            <h3 class="firstDiaTitle">个人史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="slbio_smoke">吸烟：</label>
+                                    <select class="form-control select2" id="slbio_smoke" datafiled="bio_smoke"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_smoke_detail" datafiled="bio_smoke_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_kissthecup">酗酒：</label>
+                                    <select class="form-control select2" id="slbio_kissthecup" datafiled="bio_kissthecup"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_kissthecup_detail" datafiled="bio_kissthecup_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_drugtaking">吸毒：</label>
+                                    <select class="form-control select2" id="slbio_drugtaking" datafiled="bio_drugtaking"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_drugtaking_detail" datafiled="bio_drugtaking_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_idiomaticLeechdom">习惯用药：</label>
+                                    <select class="form-control select2" id="slbio_idiomaticLeechdom" datafiled="bio_idiomaticLeechdom"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_idiomaticLeechdom_detail" datafiled="bio_idiomaticLeechdom_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_allergic">药物过敏：</label>
+                                    <select class="form-control select2" id="slbio_allergic" datafiled="bio_allergic"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_allergic_detail" datafiled="bio_allergic_detail"  placeholder="请输入内容"/></li>
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">月经史</h3>
+                            <div class="form_con" style="text-indent:14px">
+
+                                <div class="form-group">
+                                    <label for="txtcat_menarche">初潮(岁)：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtcat_menarche" datafiled="cat_menarche"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtcat_mensescycle">月经周期(天)：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtcat_mensescycle" datafiled="cat_mensescycle"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtcat_mensescycleDay">持续时间(天)：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtcat_mensescycleDay" datafiled="cat_mensescycleDay"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slcat_catameniaamount">经量：</label>
+                                    <select class="form-control select2" id="slcat_catameniaamount" datafiled="cat_catameniaamount"  placeholder="请输入内容">
+                                        <option value="正常"></option>
+                                        <option value="少">少</option>
+                                        <option value="中">中</option>
+                                        <option value="多">多</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slcat_dysmenorrhea">痛经：</label>
+                                    <select class="form-control select2" id="slcat_dysmenorrhea" datafiled="cat_dysmenorrhea"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="轻">轻</option>
+                                        <option value="中">中</option>
+                                        <option value="重">重</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slcat_mensescycleGore">血块：</label>
+                                    <select class="form-control select2" id="slcat_mensescycleGore" datafiled="cat_mensescycleGore"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtcat_menarche">末次月经：</label>
+                                    <input type="text" class="form-control infotext long_ipt datetime" id="txtcat_menarche1" datafiled="cat_menarche"  placeholder="请输入内容"/></li>
+                                </div>
+                                <!--<button type="submit" class="btn btn-default">Send invitation</button>-->
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">婚育史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div>
+                                    <div class="form-group">
+                                        <label for="sl">近亲结婚：</label>
+                                        <select class="form-control select2" id="sl" datafiled="mar_intermarriage"  placeholder="请输入内容">
+                                            <option value="否">否</option>
+                                            <option value="是">是</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="slmar_remarriage">再婚：</label>
+                                        <select class="form-control select2" id="slmar_remarriage" datafiled="mar_remarriage"  placeholder="请输入内容">
+                                            <option value="否">否</option>
+                                            <option value="是">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_marriageAge">末次妊娠时间：</label>
+                                    <input type="text" class="form-control infotext long_ipt datetime" id="txtmar_lastgestation" datafiled="mar_lastgestation"  placeholder="请输入内容"/></li>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtmar_childnumber">现有子女：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_childnumber" datafiled="mar_childnumber"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <label for="txtmar_childadopt">领养子女：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_childadopt" datafiled="mar_childadopt"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_fullterm">足月产：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_fullterm" datafiled="mar_fullterm"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="txtmar_abortive">早产：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_abortive" datafiled="mar_abortive"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_fetchinabortion">引产：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_fetchinabortion" datafiled="mar_fetchinabortion"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_natureabortion">自然流产：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_natureabortion" datafiled="mar_natureabortion"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_inducedabortion">人工流产：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_inducedabortion" datafiled="mar_inducedabortion"  placeholder="请输入内容"/></li>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtmar_drugabortion">药流：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_drugabortion" datafiled="mar_drugabortion"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_outpregnancy_part">异位妊娠次数：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_outpregnancy_part" datafiled="mar_outpregnancy_part"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="txtmar_outpregnancy_date">手术名称及时间：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_outpregnancy_date" datafiled="mar_outpregnancy_date"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <h3 class="firstDiaTitle" style="display: none">不育不孕病史</h3>
+                            <div class="form_con" style="display: none">
+                                <div class="form-group">
+                                    <label for="slfa_sterilityhistory">不育不孕病史：</label>
+                                    <select class="form-control select2" id="slfa_sterilityhistory" datafiled="fa_sterilityhistory"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtfa_sterilityhistory_detail" datafiled="fa_sterilityhistory_detail"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+                            <h3 class="firstDiaTitle" style="display: none">家族遗传病史</h3>
+                            <div class="form_con" style="display: none">
+                                <div class="form-group">
+                                    <label for="slfa_familyhistory">家族遗传病史：</label>
+                                    <select class="form-control select2" id="slfa_familyhistory" datafiled="fa_familyhistory"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtfa_familyhistory_detail" datafiled="fa_familyhistory_detail"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">体格检查</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="txtmed_stature">身高：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_stature" datafiled="med_stature"  placeholder="请输入内容"/></li>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmed_avoirdupois">体重：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_avoirdupois" datafiled="med_avoirdupois"  placeholder="请输入内容"/></li>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmed_avoirdupoisexponent">体重指数：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_avoirdupoisexponent" datafiled="med_avoirdupoisexponent"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">妇科检查</h3>
+                            <div class="form_con" style="text-indent:14px">
+
+                                <div class="form-group">
+                                    <label for="waiyin">外阴：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="waiyin" datafiled="waiyin"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="yindao">阴道：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="yindao" datafiled="yindao"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gongjing">宫颈：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="gongjing" datafiled="gongjing"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gongti">宫体：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="gongti" datafiled="gongti"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sfj">双附件：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="sfj" datafiled="sfj"  placeholder="请输入内容"/></li>
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">诊断、治疗意见</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="diagnosis">诊断：</label>
+                                    <textarea class="form-control infotextarea1 long_ipt" id="diagnosis" datafiled="diagnosis" placeholder="请输入内容"  style="width: 650px;padding: 30px 6px !important;"></textarea>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="treatment">治疗建议：</label>
+                                    <textarea class="form-control infotextarea1 long_ipt" id="treatment" datafiled="treatment" placeholder="请输入内容"  style="width: 650px;padding: 30px 6px !important;"></textarea>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+                <!--女方病历结束-->
+
+                <!--男方病历开始-->
+                <div class="tab-pane fade" id="male">
+                    <div class="male">
+
+                        <form class="form-inline">
+                            <h3 class="firstDiaTitle">现病史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="txtpouroutM">主诉：</label>
+                                    <input type="text" class="form-control infotext data-verify long_ipt" id="txtpouroutM" placeholder="请输入内容" datafiled="pourout" style="padding: 6px 42px">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtnowmedicalrecordM">现病史：</label>
+                                    <textarea class="form-control infotextarea1 data-verify long_ipt" id="txtnowmedicalrecordM" datafiled="nowmedicalrecord" placeholder="请输入内容"  style="width: 650px;padding:6px 12px"></textarea>
+
+                                </div>
+
+                                <!--<button type="submit" class="btn btn-default">Send invitation</button>-->
+                            </div>
+
+                            <h3 class="firstDiaTitle">既往史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="slana_hepatitisM">肝炎：</label>
+                                    <select class="form-control select2" id="slana_hepatitisM" datafiled="ana_hepatitis"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_hepatitis_detailM" datafiled="ana_hepatitis_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_tbM">结核：</label>
+                                    <select class="form-control select2" id="slana_tbM" datafiled="ana_tb"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_tb_detailM" datafiled="ana_tb_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_stdM">性传播疾病：</label>
+                                    <select class="form-control select2" id="slana_stdM" datafiled="ana_std"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_std_detailM" datafiled="ana_std_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="slana_parotitisM">腮腺炎：</label>
+                                    <select class="form-control select2" id="slana_parotitisM" datafiled="ana_parotitis"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_parotitis_detailM" datafiled="ana_parotitis_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_testicleStateM">睾丸手术：</label>
+                                    <select class="form-control select2" id="slana_testicleStateM" datafiled="ana_testicleState"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_testicleState_detailM" datafiled="ana_testicleState_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_parorchisstateM">附睾手术：</label>
+                                    <select class="form-control select2" id="slana_parorchisstateM" datafiled="ana_parorchisstate"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_parorchisstate_detailM" datafiled="ana_parorchisstate_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_spermaductstateM">输精管手术：</label>
+                                    <select class="form-control select2" id="slana_spermaductstateM" datafiled="ana_spermaductstate"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_spermaductstate_detailM" datafiled="ana_spermaductstate_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_procreatestateM">尿道手术：</label>
+                                    <select class="form-control select2" id="slana_procreatestateM" datafiled="ana_procreatestate"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtana_procreatestate_detailM" datafiled="ana_procreatestate_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slana_nephritis">其他：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtana_anamnesis_memoM" datafiled="ana_anamnesis_memo"  placeholder="请输入内容"/></li>
+                                </div>
+
+                            </div>
+
+
+
+                            <h3 class="firstDiaTitle">个人史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="slbio_smokeM">吸烟：</label>
+                                    <select class="form-control select2" id="slbio_smokeM" datafiled="bio_smoke"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_smoke_detailM" datafiled="bio_smoke_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_kissthecupM">酗酒：</label>
+                                    <select class="form-control select2" id="slbio_kissthecupM" datafiled="bio_kissthecup"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_kissthecup_detailM" datafiled="bio_kissthecup_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_drugtakingM">吸毒：</label>
+                                    <select class="form-control select2" id="slbio_drugtakingM" datafiled="bio_drugtaking"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_drugtaking_detailM" datafiled="bio_drugtaking_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_idiomaticLeechdomM">习惯用药：</label>
+                                    <select class="form-control select2" id="slbio_idiomaticLeechdomM" datafiled="bio_idiomaticLeechdom"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_idiomaticLeechdom_detailM" datafiled="bio_idiomaticLeechdom_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slbio_allergicM">药物过敏：</label>
+                                    <select class="form-control select2" id="slbio_allergicM" datafiled="bio_allergic"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtbio_allergic_detailM" datafiled="bio_allergic_detail"  placeholder="请输入内容"/></li>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <h3 class="firstDiaTitle">婚育史</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="txtmar_marriageAgeM">结婚年龄：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_marriageAgeM" datafiled="mar_marriageAge"  placeholder="请输入内容"/></li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmar_lastgestationM">最后生育时间：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmar_lastgestationM" datafiled="mar_lastgestation"  placeholder="请输入内容"/></li>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="slM">近亲结婚：</label>
+                                    <select class="form-control select2" id="slM" datafiled="mar_intermarriage"  placeholder="请输入内容">
+                                        <option value="否">否</option>
+                                        <option value="是">是</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slmar_remarriageM">再婚：</label>
+                                    <select class="form-control select2" id="slmar_remarriageM" datafiled="mar_remarriage"  placeholder="请输入内容">
+                                        <option value="否">否</option>
+                                        <option value="是">是</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+
+                            <h3 class="firstDiaTitle" style="display: none">不育不孕病史</h3>
+                            <div class="form_con" style="display: none">
+                                <div class="form-group">
+                                    <label for="slfa_sterilityhistoryM">不育不孕病史：</label>
+                                    <select class="form-control select2" id="slfa_sterilityhistoryM" datafiled="fa_sterilityhistory"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtfa_sterilityhistory_detailM" datafiled="fa_sterilityhistory_detail"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle" style="display: none">家族遗传病史</h3>
+                            <div class="form_con" style="display: none">
+                                <div class="form-group">
+                                    <label for="slfa_familyhistoryM">家族遗传病史：</label>
+                                    <select class="form-control select2" id="slfa_familyhistoryM" datafiled="fa_familyhistory"  placeholder="请输入内容">
+                                        <option value="无">无</option>
+                                        <option value="有">有</option>
+                                    </select>
+                                    <input type="text" class="form-control infotext" id="txtfa_familyhistory_detailM" datafiled="fa_familyhistory_detail"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+
+                            <h3 class="firstDiaTitle">体格检查</h3>
+                            <div class="form_con" style="text-indent:14px">
+                                <div class="form-group">
+                                    <label for="txtmed_statureM">身高：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_statureM" datafiled="med_stature"  placeholder="请输入内容"/></li>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmed_avoirdupoisM">体重：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_avoirdupoisM" datafiled="med_avoirdupois"  placeholder="请输入内容"/></li>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtmed_avoirdupoisexponentM">体重指数：</label>
+                                    <input type="text" class="form-control infotext long_ipt" id="txtmed_avoirdupoisexponentM" datafiled="med_avoirdupoisexponent"  placeholder="请输入内容"/></li>
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+                <!--男方病历结束-->
+
+                <!--病历附件开始开始-->
+                <div class="tab-pane fade" id="fileinfo">
+                    <div class="fileinfo">
+                        <div class="step">
+                            <div class="step1">
+                                <div class = "search_form1">
+                                    <ul>
+                                        <li class="search_infor"><label>病历附件信息</label>
+                                            <div class="btn colorButton" id="picker">添加附件</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form">
+
+                                    <!--图片预览开始-->
+                                    <ul id="preViewImg" class="pro_imgBig" >
+
+                                    </ul>
+                                    <!--图片预览结束-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--病历附件结束-->
+            </div>
+            <div class="divbtn" style="text-align:center; clear:both;">
+                <input type="button" value="预览" class="btn3 colorButton" id="btnPrew"/>
+                <input type="button" value="提交" class="btn3 colorButton" id="btnPost"/>
+                <input type="button" value="返回" class="btn3 colorButton" id="btnBack"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="chooseform">
+        <div class="choose_tiptop"><span>上传文件信息</span><a></a></div>
+        <div class="form" style="margin-left:10px;">
+            <ul id="thelist">
+
+            </ul>
+        </div>
+        <div class="divbtn1">
+		    <input type="button" class="search_btn colorButton" value="开始上传" id="ctlBtn"/>
+        </div>
+    </div>
+
+    <!--左侧sideBar开始-->
+    <div class="site-sidebar">
+        <a href="javascript:;" id="backTop" class="top" style="display: block;" data-type="top">
+            <i class="glyphicon glyphicon-chevron-up ico"></i>
+        </a>
+    </div>
+    <!--左侧sideBar结束-->
+
+
+    <script src="../js/common/jquery-1.9.1.min.js"></script>
+    <script src="../js/plugins/bootstrap/bootstrap.min.js"></script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             fa-comments"></i>
+
+            </a>
+        </div>
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+    <script src="js/hplus.min.js?v=4.0.0"></script>
+    <script type="text/javascript" src="js/contabs.min.js"></script>
+    <script src="10
+
+dir
+36
+https://58.51.90.231/svn/cloudClinic/%E6%BA%
